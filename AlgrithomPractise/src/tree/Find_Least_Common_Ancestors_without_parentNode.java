@@ -1,5 +1,7 @@
 package tree;
 
+import javax.swing.tree.TreeModel;
+
 import commonDataStructures.TreeNode;
 
 public class Find_Least_Common_Ancestors_without_parentNode {
@@ -23,6 +25,28 @@ public class Find_Least_Common_Ancestors_without_parentNode {
 			return Tleft;
 		return Tright;
 
+	}
+
+	/**
+	 * Not tested yet
+	 * 
+	 * @param T
+	 * @param T1
+	 * @param T2
+	 * @return
+	 */
+	public static TreeNode leastCommonAncestorOfBST(TreeNode T, TreeNode T1,
+			TreeNode T2) {
+
+		if (T == null)
+			return null;
+		if (T1.val < T.val && T1.val < T2.val)
+			return leastCommonAncestorOfBST(T.left, T1, T2);
+		if (T1.val > T.val && T2.val > T2.val)
+			return leastCommonAncestorOfBST(T.right, T1, T2);
+		else {
+			return T;
+		}
 	}
 
 	public static void main(String[] args) {

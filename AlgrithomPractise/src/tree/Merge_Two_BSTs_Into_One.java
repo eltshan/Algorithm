@@ -27,11 +27,22 @@ public class Merge_Two_BSTs_Into_One {
 		}
 
 		if (x1 != null) {
-			p.right = x2;
-		} else if (x2 != null) {
 			p.right = x1;
+		} else if (x2 != null) {
+			p.right = x2;
 		}
-
+		// while (head.right != null) {
+		// System.out.println(head.val);
+		// head = head.right;
+		// }
 		return BSTtoLinkedList.DLinkListToBST(head.right);
+	}
+
+	public static void main(String args[]) {
+		TreeNode T1 = TreeNode.generateBinaryTree(new int[] { 2, 4, 6, 8, 10 });
+		TreeNode T2 = TreeNode.generateBinaryTree(new int[] { 1, 3, 5, 7, 9 });
+		TreeNode T3 = mergeTwoBSTs(T1, T2);
+
+		TreeNode.inOrderTravel(T3);
 	}
 }

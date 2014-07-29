@@ -12,16 +12,16 @@ public class BSTtoLinkedList {
 		TreeNode mid = head;
 		while (p != null) {
 			p = p.right;
-			if ((i++) / 2 == 0)
+			if ((++i) % 2 == 0)
 				mid = mid.right;
 		}
 
-		System.out.println(mid.val + " " + i);
+		// System.out.println(mid.val + " " + i);
 		mid.left = DL2BSTHelper(head, 0, i / 2 - 1);
-		System.out.println(mid.left.val);
+		// System.out.println(mid.left.val);
 
 		mid.right = DL2BSTHelper(mid.right, i / 2 + 1, i - 1);
-		System.out.println(mid.right.val);
+		// System.out.println(mid.right.val);
 
 		return mid;
 
@@ -127,7 +127,8 @@ public class BSTtoLinkedList {
 	public static void main(String args[]) {
 		// TreeNode x[] = { new TreeNode(1) };
 		// Test1(x);
-		TreeNode T = TreeNode.generateBST();
+		TreeNode T = TreeNode.generateBinaryTree(new int[] { 1, 2, 3, 4, 5, 6,
+				7, 8, 9, 10 });
 		TreeNode head = B2LIterative(T);
 		TreeNode root = DLinkListToBST(head);
 		TreeNode.inOrderTravel(root);

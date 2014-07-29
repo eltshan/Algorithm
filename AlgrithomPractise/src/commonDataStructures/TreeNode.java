@@ -93,6 +93,22 @@ public class TreeNode {
 		inorderTravelHelper(root);
 	}
 
+	public static void preOrderTravel(TreeNode root) {
+		if (root == null)
+			return;
+		System.out.println(root.val);
+		preOrderTravel(root.left);
+		preOrderTravel(root.right);
+	}
+
+	public static void postOrderTravel(TreeNode root) {
+		if (root == null)
+			return;
+		postOrderTravel(root.left);
+		postOrderTravel(root.right);
+		System.out.print(root.val);
+	}
+
 	private static void inorderTravelHelper(TreeNode T) {
 		if (T == null)
 			return;
@@ -126,7 +142,6 @@ public class TreeNode {
 				return false;
 		}
 		return false;
-
 	}
 
 }
