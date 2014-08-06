@@ -1,5 +1,7 @@
 package array;
 
+import commonDataStructures.Heap;
+
 /**
  * Given two sorted positive integer arrays A(n) and B(n) , we define a set S =
  * {(a,b) | a inA and b in B}. Obviously there are n^2 elements in S. The value
@@ -15,9 +17,14 @@ package array;
  */
 //public class N_Largest_Sums {
 //	public static int nLargestSums(int a[], int b[]) {
-//		int i = a.length-1;
-//		int j = b.length-1;
-//		
-//		while()
+//		int m = a.length;
+//		int n = b.length;
+//		int i = m;
+//		int j = n;
+//		Heap heap = new Heap();
+//		// heap.put(a);
+//		while (i > 0 && j > 0) {
+//			
+//		}
 //	}
 // }
